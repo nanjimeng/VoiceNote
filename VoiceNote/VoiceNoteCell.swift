@@ -12,7 +12,7 @@ class VoiceNoteCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var playbackProgressPlaceholderView: UIView!
+    @IBOutlet weak var playProgressView: VoiceProgressView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
