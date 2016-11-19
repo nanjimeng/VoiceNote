@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QuL-f2-ii7">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="OkN-KQ-VLz">
+            <objects>
+                <navigationController id="QuL-f2-ii7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qv0-Zm-wSJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IIv-C3-gOk" kind="relationship" relationship="rootViewController" id="dRh-ps-otq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8U-y1-2Mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1322" y="59"/>
+        </scene>
+        <!--语言记事本-->
+        <scene sceneID="8v8-cv-xDP">
+            <objects>
+                <tableViewController storyboardIdentifier="VoiceNoteListController" id="IIv-C3-gOk" customClass="VoiceNoteListController" customModule="VoiceNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="mU6-ae-ltu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VoiceNoteCell" rowHeight="100" id="LKb-Lb-pni" customClass="VoiceNoteCell" customModule="VoiceNote" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LKb-Lb-pni" id="Q8P-ZC-tk2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" placeholderIntrinsicWidth="486" placeholderIntrinsicHeight="34" text="Subject" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zab-Mg-fFf">
+                                            <rect key="frame" x="51" y="13" width="259" height="34"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adW-D4-AeL">
+                                            <rect key="frame" x="51" y="62" width="259" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5P6-fd-tCj">
+                                            <rect key="frame" x="8" y="30" width="40" height="40"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="Maq-NZ-1aM"/>
+                                                <constraint firstAttribute="width" secondItem="5P6-fd-tCj" secondAttribute="height" multiplier="1:1" id="R2v-Uh-oco"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="adW-D4-AeL" secondAttribute="bottom" priority="200" constant="21.5" id="MNL-bm-tEy"/>
+                                        <constraint firstItem="zab-Mg-fFf" firstAttribute="leading" secondItem="Q8P-ZC-tk2" secondAttribute="leading" constant="51" id="OVe-9j-U44"/>
+                                        <constraint firstItem="zab-Mg-fFf" firstAttribute="top" secondItem="Q8P-ZC-tk2" secondAttribute="topMargin" constant="5" id="TWV-1V-FGw"/>
+                                        <constraint firstItem="adW-D4-AeL" firstAttribute="top" secondItem="zab-Mg-fFf" secondAttribute="bottom" constant="15" id="aag-9M-611"/>
+                                        <constraint firstItem="5P6-fd-tCj" firstAttribute="leading" secondItem="Q8P-ZC-tk2" secondAttribute="leading" constant="8" id="cqA-vL-Z3L"/>
+                                        <constraint firstItem="adW-D4-AeL" firstAttribute="leading" secondItem="zab-Mg-fFf" secondAttribute="leading" id="j6W-9w-K0K"/>
+                                        <constraint firstAttribute="trailing" secondItem="zab-Mg-fFf" secondAttribute="trailing" constant="10" id="jed-XB-udJ"/>
+                                        <constraint firstAttribute="centerY" secondItem="5P6-fd-tCj" secondAttribute="centerY" id="lvY-Ev-DSc"/>
+                                        <constraint firstAttribute="trailing" secondItem="adW-D4-AeL" secondAttribute="trailing" constant="10" id="vks-fE-HcW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="durationLabel" destination="adW-D4-AeL" id="5Gy-Gz-oD7"/>
+                                    <outlet property="playbackProgressPlaceholderView" destination="5P6-fd-tCj" id="ykI-g1-OBM"/>
+                                    <outlet property="titleLabel" destination="zab-Mg-fFf" id="gOl-Ai-tEL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IIv-C3-gOk" id="6Wc-ck-0bx"/>
+                            <outlet property="delegate" destination="IIv-C3-gOk" id="Yki-A4-Zti"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="语言记事本" id="Fes-4e-bFM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="V2R-fD-swi">
+                            <connections>
+                                <segue destination="T5v-8e-GOZ" kind="show" id="Bcy-Ow-y6j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOc-b0-I4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="59"/>
+        </scene>
+        <!--添加语言-->
+        <scene sceneID="oqz-Ei-gQ1">
+            <objects>
+                <viewController storyboardIdentifier="AddVoiceNoteController" id="T5v-8e-GOZ" customClass="AddVoiceNoteController" customModule="VoiceNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="COv-Tg-lac"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eic-v9-6Jl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="phs-Tj-tKS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5O-Sw-Upw" customClass="VoiceWaveView" customModule="VoiceNote" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoN-9P-Rsg">
+                                <rect key="frame" x="129" y="430" width="62" height="30"/>
+                                <state key="normal" title="播放录音"/>
+                                <connections>
+                                    <action selector="onButtonPlayClick" destination="T5v-8e-GOZ" eventType="touchUpInside" id="fef-gF-UE8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9db-jW-75P">
+                                <rect key="frame" x="129" y="430" width="62" height="30"/>
+                                <state key="normal" title="保存录音"/>
+                                <connections>
+                                    <action selector="onButtonSaveClick" destination="T5v-8e-GOZ" eventType="touchUpInside" id="VXm-eK-LRJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNG-zu-LkN">
+                                <rect key="frame" x="128.5" y="430" width="62" height="30"/>
+                                <state key="normal" title="删除重录"/>
+                                <connections>
+                                    <action selector="onButtonIgnoreClick" destination="T5v-8e-GOZ" eventType="touchUpInside" id="VUZ-7x-grm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLy-rh-M1K">
+                                <rect key="frame" x="110" y="425" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EWi-SN-SXR"/>
+                                    <constraint firstAttribute="height" constant="40" id="zYb-hr-neV"/>
+                                </constraints>
+                                <state key="normal" title="长按录音"/>
+                                <connections>
+                                    <action selector="onButtonRacordTouchDown" destination="T5v-8e-GOZ" eventType="touchDown" id="Ao8-Gb-RXg"/>
+                                    <action selector="onButtonRacordTouchUp" destination="T5v-8e-GOZ" eventType="touchUpOutside" id="IVY-19-13N"/>
+                                    <action selector="onButtonRacordTouchUp" destination="T5v-8e-GOZ" eventType="touchUpInside" id="mxK-bf-Enk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="kLy-rh-M1K" secondAttribute="bottom" constant="103" id="04Q-1V-u7r"/>
+                            <constraint firstItem="K5O-Sw-Upw" firstAttribute="height" secondItem="phs-Tj-tKS" secondAttribute="height" id="1uk-34-fmn"/>
+                            <constraint firstItem="K5O-Sw-Upw" firstAttribute="centerY" secondItem="phs-Tj-tKS" secondAttribute="centerY" id="6WM-vW-GPV"/>
+                            <constraint firstItem="DNG-zu-LkN" firstAttribute="centerY" secondItem="kLy-rh-M1K" secondAttribute="centerY" id="DVs-OW-2o9"/>
+                            <constraint firstItem="kLy-rh-M1K" firstAttribute="centerX" secondItem="phs-Tj-tKS" secondAttribute="centerX" id="OZ1-yD-etC"/>
+                            <constraint firstItem="9db-jW-75P" firstAttribute="centerY" secondItem="kLy-rh-M1K" secondAttribute="centerY" id="SiM-Ir-9mu"/>
+                            <constraint firstItem="aoN-9P-Rsg" firstAttribute="centerX" secondItem="phs-Tj-tKS" secondAttribute="centerX" id="YPK-hG-AoL"/>
+                            <constraint firstItem="DNG-zu-LkN" firstAttribute="centerX" secondItem="phs-Tj-tKS" secondAttribute="centerX" id="eRa-nZ-OHD"/>
+                            <constraint firstItem="K5O-Sw-Upw" firstAttribute="centerX" secondItem="phs-Tj-tKS" secondAttribute="centerX" id="nfK-DT-yBj"/>
+                            <constraint firstItem="aoN-9P-Rsg" firstAttribute="centerY" secondItem="kLy-rh-M1K" secondAttribute="centerY" id="pVc-cB-EY9"/>
+                            <constraint firstItem="K5O-Sw-Upw" firstAttribute="width" secondItem="phs-Tj-tKS" secondAttribute="width" id="roj-BF-SSp"/>
+                            <constraint firstItem="9db-jW-75P" firstAttribute="centerX" secondItem="kLy-rh-M1K" secondAttribute="centerX" id="sAC-dz-8BG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加语言" id="aeA-RH-upl"/>
+                    <connections>
+                        <outlet property="ignoreButton" destination="DNG-zu-LkN" id="3Ut-NL-EFS"/>
+                        <outlet property="ignoreButtonX" destination="eRa-nZ-OHD" id="ze5-fa-pG7"/>
+                        <outlet property="playButton" destination="aoN-9P-Rsg" id="mzF-TM-9Gc"/>
+                        <outlet property="playButtonX" destination="YPK-hG-AoL" id="h5i-C3-5gn"/>
+                        <outlet property="recordButton" destination="kLy-rh-M1K" id="kza-p9-USn"/>
+                        <outlet property="saveButton" destination="9db-jW-75P" id="IIP-pf-wLf"/>
+                        <outlet property="waveView" destination="K5O-Sw-Upw" id="4LR-U9-NNg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHI-QY-OJo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="58"/>
+        </scene>
+    </scenes>
+</document>

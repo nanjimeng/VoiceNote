@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63A629FA1DDEA82E00C81397 /* DYDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A629F91DDEA82E00C81397 /* DYDataCenter.swift */; };
+		63A629FD1DDEA9F700C81397 /* VoiceNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */; };
+		63A62A021DDEB01800C81397 /* VoiceNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */; };
+		63A62A071DDEBA5500C81397 /* VoiceWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */; };
+		63A62A0A1DDF664300C81397 /* VoiceNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A081DDF664300C81397 /* VoiceNote.xcdatamodeld */; };
+		63A62A6D1DE0817100C81397 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */; };
+		63A62A721DE0A87D00C81397 /* VoiceProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */; };
+		63B003371DDE917C00F22F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B003361DDE917C00F22F0B /* AppDelegate.swift */; };
+		63B003391DDE917C00F22F0B /* AddVoiceNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */; };
+		63B0033C1DDE917C00F22F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B0033A1DDE917C00F22F0B /* Main.storyboard */; };
+		63B003411DDE917C00F22F0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B003401DDE917C00F22F0B /* Assets.xcassets */; };
+		63B003441DDE917C00F22F0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B003421DDE917C00F22F0B /* LaunchScreen.storyboard */; };
+		63B0034C1DDE976A00F22F0B /* VoiceNoteListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0034B1DDE976A00F22F0B /* VoiceNoteListController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		63A629F51DDEA76000C81397 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = VoiceNote/Carthage/Build2/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
+		63A629F91DDEA82E00C81397 /* DYDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYDataCenter.swift; sourceTree = "<group>"; };
+		63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteData.swift; sourceTree = "<group>"; };
+		63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = VoiceNote/Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
+		63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteCell.swift; sourceTree = "<group>"; };
+		63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceWaveView.swift; sourceTree = "<group>"; };
+		63A62A091DDF664300C81397 /* VoiceNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceNote.xcdatamodel; sourceTree = "<group>"; };
+		63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceProgressView.swift; sourceTree = "<group>"; };
+		63B003331DDE917C00F22F0B /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63B003361DDE917C00F22F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoiceNoteController.swift; sourceTree = "<group>"; };
+		63B0033B1DDE917C00F22F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63B003401DDE917C00F22F0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63B003431DDE917C00F22F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63B003451DDE917C00F22F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B0034B1DDE976A00F22F0B /* VoiceNoteListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteListController.swift; sourceTree = "<group>"; };
+		63BF55F01DDEA46C0078D233 /* VoiceNoteBridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceNoteBridging.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63B003301DDE917C00F22F0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63A62A6D1DE0817100C81397 /* MagicalRecord.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63A629F41DDEA76000C81397 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */,
+				63A629F51DDEA76000C81397 /* MagicalRecord.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63A629F81DDEA82E00C81397 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63A629F91DDEA82E00C81397 /* DYDataCenter.swift */,
+				63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */,
+				63A62A081DDF664300C81397 /* VoiceNote.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63A62A031DDEBA4600C81397 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63A62A701DE0A86F00C81397 /* VoiceProgressView */,
+				63A62A041DDEBA4600C81397 /* VoiceWaveView */,
+				63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63A62A041DDEBA4600C81397 /* VoiceWaveView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VoiceWaveView;
+			sourceTree = "<group>";
+		};
+		63A62A051DDEBA4600C81397 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63A62A701DE0A86F00C81397 /* VoiceProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */,
+			);
+			path = VoiceProgressView;
+			sourceTree = "<group>";
+		};
+		63B0032A1DDE917C00F22F0B = {
+			isa = PBXGroup;
+			children = (
+				63B003351DDE917C00F22F0B /* VoiceNote */,
+				63B003341DDE917C00F22F0B /* Products */,
+				63A629F41DDEA76000C81397 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		63B003341DDE917C00F22F0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63B003331DDE917C00F22F0B /* VoiceNote.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63B003351DDE917C00F22F0B /* VoiceNote */ = {
+			isa = PBXGroup;
+			children = (
+				63A62A031DDEBA4600C81397 /* View */,
+				63A62A051DDEBA4600C81397 /* ViewController */,
+				63A629F81DDEA82E00C81397 /* Model */,
+				63BF55F01DDEA46C0078D233 /* VoiceNoteBridging.h */,
+				63B003361DDE917C00F22F0B /* AppDelegate.swift */,
+				63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */,
+				63B0034B1DDE976A00F22F0B /* VoiceNoteListController.swift */,
+				63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */,
+				63B0033A1DDE917C00F22F0B /* Main.storyboard */,
+				63B003401DDE917C00F22F0B /* Assets.xcassets */,
+				63B003421DDE917C00F22F0B /* LaunchScreen.storyboard */,
+				63B003451DDE917C00F22F0B /* Info.plist */,
+			);
+			path = VoiceNote;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63B003321DDE917C00F22F0B /* VoiceNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63B003481DDE917C00F22F0B /* Build configuration list for PBXNativeTarget "VoiceNote" */;
+			buildPhases = (
+				63B0032F1DDE917C00F22F0B /* Sources */,
+				63B003301DDE917C00F22F0B /* Frameworks */,
+				63B003311DDE917C00F22F0B /* Resources */,
+				63A629F71DDEA78100C81397 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceNote;
+			productName = VoiceNote;
+			productReference = 63B003331DDE917C00F22F0B /* VoiceNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63B0032B1DDE917C00F22F0B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = VoiceNote;
+				TargetAttributes = {
+					63B003321DDE917C00F22F0B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = A3GRMU25FA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 63B0032E1DDE917C00F22F0B /* Build configuration list for PBXProject "VoiceNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63B0032A1DDE917C00F22F0B;
+			productRefGroup = 63B003341DDE917C00F22F0B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63B003321DDE917C00F22F0B /* VoiceNote */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63B003311DDE917C00F22F0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B003441DDE917C00F22F0B /* LaunchScreen.storyboard in Resources */,
+				63B003411DDE917C00F22F0B /* Assets.xcassets in Resources */,
+				63B0033C1DDE917C00F22F0B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63A629F71DDEA78100C81397 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/VoiceNote/Carthage/Build/iOS/MagicalRecord.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63B0032F1DDE917C00F22F0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B0034C1DDE976A00F22F0B /* VoiceNoteListController.swift in Sources */,
+				63A629FA1DDEA82E00C81397 /* DYDataCenter.swift in Sources */,
+				63A62A0A1DDF664300C81397 /* VoiceNote.xcdatamodeld in Sources */,
+				63A62A071DDEBA5500C81397 /* VoiceWaveView.swift in Sources */,
+				63A62A721DE0A87D00C81397 /* VoiceProgressView.swift in Sources */,
+				63A62A021DDEB01800C81397 /* VoiceNoteCell.swift in Sources */,
+				63B003391DDE917C00F22F0B /* AddVoiceNoteController.swift in Sources */,
+				63B003371DDE917C00F22F0B /* AppDelegate.swift in Sources */,
+				63A629FD1DDEA9F700C81397 /* VoiceNoteData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		63B0033A1DDE917C00F22F0B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63B0033B1DDE917C00F22F0B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63B003421DDE917C00F22F0B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63B003431DDE917C00F22F0B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63B003461DDE917C00F22F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63B003471DDE917C00F22F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63B003491DDE917C00F22F0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A3GRMU25FA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceNote/Carthage/Build2/iOS",
+					"$(PROJECT_DIR)/VoiceNote/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = VoiceNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voicenote.VoiceNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = VoiceNote/VoiceNoteBridging.h;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		63B0034A1DDE917C00F22F0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A3GRMU25FA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceNote/Carthage/Build2/iOS",
+					"$(PROJECT_DIR)/VoiceNote/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = VoiceNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.voicenote.VoiceNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = VoiceNote/VoiceNoteBridging.h;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63B0032E1DDE917C00F22F0B /* Build configuration list for PBXProject "VoiceNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63B003461DDE917C00F22F0B /* Debug */,
+				63B003471DDE917C00F22F0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63B003481DDE917C00F22F0B /* Build configuration list for PBXNativeTarget "VoiceNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63B003491DDE917C00F22F0B /* Debug */,
+				63B0034A1DDE917C00F22F0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63A62A081DDF664300C81397 /* VoiceNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63A62A091DDF664300C81397 /* VoiceNote.xcdatamodel */,
+			);
+			currentVersion = 63A62A091DDF664300C81397 /* VoiceNote.xcdatamodel */;
+			path = VoiceNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 63B0032B1DDE917C00F22F0B /* Project object */;
+}
