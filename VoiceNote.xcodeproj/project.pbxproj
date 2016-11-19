@@ -11,9 +11,9 @@
 		63A629FD1DDEA9F700C81397 /* VoiceNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */; };
 		63A62A021DDEB01800C81397 /* VoiceNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */; };
 		63A62A071DDEBA5500C81397 /* VoiceWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */; };
-		63A62A0A1DDF664300C81397 /* VoiceNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A081DDF664300C81397 /* VoiceNote.xcdatamodeld */; };
 		63A62A6D1DE0817100C81397 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */; };
 		63A62A721DE0A87D00C81397 /* VoiceProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */; };
+		63A62A751DE0AAA200C81397 /* VoiceNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A731DE0AAA200C81397 /* VoiceNote.xcdatamodeld */; };
 		63B003371DDE917C00F22F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B003361DDE917C00F22F0B /* AppDelegate.swift */; };
 		63B003391DDE917C00F22F0B /* AddVoiceNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */; };
 		63B0033C1DDE917C00F22F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B0033A1DDE917C00F22F0B /* Main.storyboard */; };
@@ -29,8 +29,8 @@
 		63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = VoiceNote/Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
 		63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteCell.swift; sourceTree = "<group>"; };
 		63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceWaveView.swift; sourceTree = "<group>"; };
-		63A62A091DDF664300C81397 /* VoiceNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceNote.xcdatamodel; sourceTree = "<group>"; };
 		63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceProgressView.swift; sourceTree = "<group>"; };
+		63A62A741DE0AAA200C81397 /* VoiceNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceNote.xcdatamodel; sourceTree = "<group>"; };
 		63B003331DDE917C00F22F0B /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B003361DDE917C00F22F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoiceNoteController.swift; sourceTree = "<group>"; };
@@ -66,9 +66,9 @@
 		63A629F81DDEA82E00C81397 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63A62A731DE0AAA200C81397 /* VoiceNote.xcdatamodeld */,
 				63A629F91DDEA82E00C81397 /* DYDataCenter.swift */,
 				63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */,
-				63A62A081DDF664300C81397 /* VoiceNote.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,13 +234,13 @@
 			files = (
 				63B0034C1DDE976A00F22F0B /* VoiceNoteListController.swift in Sources */,
 				63A629FA1DDEA82E00C81397 /* DYDataCenter.swift in Sources */,
-				63A62A0A1DDF664300C81397 /* VoiceNote.xcdatamodeld in Sources */,
 				63A62A071DDEBA5500C81397 /* VoiceWaveView.swift in Sources */,
 				63A62A721DE0A87D00C81397 /* VoiceProgressView.swift in Sources */,
 				63A62A021DDEB01800C81397 /* VoiceNoteCell.swift in Sources */,
 				63B003391DDE917C00F22F0B /* AddVoiceNoteController.swift in Sources */,
 				63B003371DDE917C00F22F0B /* AppDelegate.swift in Sources */,
 				63A629FD1DDEA9F700C81397 /* VoiceNoteData.swift in Sources */,
+				63A62A751DE0AAA200C81397 /* VoiceNote.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,12 +419,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		63A62A081DDF664300C81397 /* VoiceNote.xcdatamodeld */ = {
+		63A62A731DE0AAA200C81397 /* VoiceNote.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				63A62A091DDF664300C81397 /* VoiceNote.xcdatamodel */,
+				63A62A741DE0AAA200C81397 /* VoiceNote.xcdatamodel */,
 			);
-			currentVersion = 63A62A091DDF664300C81397 /* VoiceNote.xcdatamodel */;
+			currentVersion = 63A62A741DE0AAA200C81397 /* VoiceNote.xcdatamodel */;
 			path = VoiceNote.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
