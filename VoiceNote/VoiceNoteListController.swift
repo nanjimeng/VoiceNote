@@ -19,15 +19,21 @@ class VoiceNoteListController: UITableViewController {
     
     //MARK: Property
     var fetchedResultsController : NSFetchedResultsController<VoiceNoteData>!
+    var selectedVoiceCellVM : VoiceNoteCellVM? {
+        didSet {
+            oldValue
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100.0
+        tableView.estimatedRowHeight = 90
         
         fetchedResultsController = VoiceNoteData.mr_fetchAllSorted(by: "date", ascending: false, with: nil, groupBy: nil, delegate: self, in:NSManagedObjectContext.mr_default()) as! NSFetchedResultsController<VoiceNoteData>
     }
+    
 }
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
@@ -58,6 +64,10 @@ extension VoiceNoteListController {
         let voiceVM = VoiceNoteCellVM(data: voice)
         cell.viewModel = voiceVM
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 

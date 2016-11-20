@@ -34,5 +34,19 @@ class VoiceNoteCell: UITableViewCell {
         DynamicProperty<String>(object: self.titleLabel, keyPath: #keyPath(text)) <~ DynamicProperty<String>(object: self, keyPath: #keyPath(viewModel.title)).signal
         
         DynamicProperty<String>(object: self.durationLabel, keyPath: #keyPath(text)) <~ DynamicProperty<String>(object: self, keyPath: #keyPath(viewModel.duration)).signal
+        
+        let signalProgress = DynamicProperty<Float>(object: self, keyPath: #keyPath(viewModel.progress)).signal
+        let signalState = DynamicProperty<Int>(object: self, keyPath: #keyPath(viewModel.state)).signal
+        signalProgress.combineLatest(with: signalState)
+            .observeValues {[weak self] (progress, state) in
+                self?.playProgressView.progress = CGFloat(progress == nil ? 0 : progress!)
+                
+                let stateInt = state == nil ? 0 : state!
+                if stateInt == VoiceState.play {
+                    self?.playProgressView.iconStyle = VoiceProgressView.KMIconStyle.Play
+                } else {
+                    self?.playProgressView.iconStyle = VoiceProgressView.KMIconStyle.Pause
+                }
+        }
     }
 }
