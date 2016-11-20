@@ -23,12 +23,12 @@ class VoiceNoteListController: UITableViewController {
     var voiceCellVMs : [VoiceNoteCellVM] =  [VoiceNoteCellVM]()
     var selectedVoiceCellVM : VoiceNoteCellVM? {
         didSet {
-            oldValue?.state = VoiceState.pause
             changePlayState(newVoice: selectedVoiceCellVM, oldVoice: oldValue)
         }
     }
-    var audioPlayer : AVAudioPlayer?
     
+    dynamic var audioPlayer : AVAudioPlayer?
+    var displayLink: CADisplayLink?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +46,19 @@ class VoiceNoteListController: UITableViewController {
         //点击同一个Voice
         if  newVoice == oldVoice {
             newVoice?.changeState()
+            if let state = newVoice?.state {
+                if state == VoiceState.play {
+                    startUpdateProgress()
+                    audioPlayer?.play()
+                } else {
+                    stopUpdateProgress()
+                    audioPlayer?.pause()
+                }
+            }
             return
         }
+        
+        oldVoice?.state = VoiceState.pause
         
         //点击不同Voice，先释放前一个AVAudioPlayer
         audioPlayer?.delegate = nil
@@ -65,14 +76,39 @@ class VoiceNoteListController: UITableViewController {
             audioPlayer?.delegate = self
             audioPlayer?.isMeteringEnabled = true
             
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.play()
+            
             newVoice.state = VoiceState.play
+            startUpdateProgress()
         } catch let error as NSError {
             debugPrint("\(error.localizedDescription)")
             return
         }
+    }
+    
+    //MARK: Update Progress
+    func startUpdateProgress() {
+        self.displayLink?.invalidate()
+        let displayLink = CADisplayLink.init(target: self, selector: #selector(updateProgress))
+        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        self.displayLink = displayLink
+    }
+    
+    func stopUpdateProgress() {
+        self.displayLink?.invalidate()
+        self.displayLink = nil
+    }
+    
+    func updateProgress() {
+        guard let voiceCellVM =  self.selectedVoiceCellVM,
+            let audioPlayer =  self.audioPlayer else {
+            return
+        }
         
-        audioPlayer?.prepareToPlay()
-        audioPlayer?.play()
+        let progress = Float(audioPlayer.currentTime) / Float(audioPlayer.duration)
+        debugPrint("progress: \(progress)")
+        voiceCellVM.progress = progress
     }
 }
 
@@ -154,13 +190,22 @@ extension VoiceNoteListController: NSFetchedResultsControllerDelegate {
 extension VoiceNoteListController : AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
-            selectedVoiceCellVM?.state = VoiceState.pause
-            selectedVoiceCellVM?.progress = 0
+            audioPlayer?.delegate = nil
+            audioPlayer?.stop()
+            audioPlayer = nil
+            
+            let voiceCellVM = selectedVoiceCellVM
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+                voiceCellVM?.state = VoiceState.pause
+                voiceCellVM?.progress = 0
+                self.stopUpdateProgress()
+            }
         }
     }
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         debugPrint(error?.localizedDescription ?? "")
+        stopUpdateProgress()
     }
 }
 
