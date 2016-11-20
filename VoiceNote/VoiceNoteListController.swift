@@ -42,6 +42,35 @@ class VoiceNoteListController: UITableViewController {
         }
     }
     
+    func playVoice(voice: VoiceNoteCellVM?) {
+        //点击不同Voice，先释放前一个AVAudioPlayer
+        audioPlayer?.delegate = nil
+        audioPlayer?.pause()
+        audioPlayer = nil
+        
+        //点击新的Voice
+        guard let voice = voice else {
+            return
+        }
+        
+        let path = voice.audioPath()
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer!.delegate = self
+            audioPlayer!.isMeteringEnabled = true
+            
+            audioPlayer!.prepareToPlay()
+            audioPlayer!.currentTime = TimeInterval(voice.progress) * audioPlayer!.duration
+            audioPlayer!.play()
+            
+            voice.state = VoiceState.play
+            startUpdateProgress()
+        } catch let error as NSError {
+            debugPrint("\(error.localizedDescription)")
+            return
+        }
+    }
+    
     func changePlayState(newVoice: VoiceNoteCellVM?, oldVoice: VoiceNoteCellVM?) {
         //点击同一个Voice
         if  newVoice == oldVoice {
@@ -49,7 +78,12 @@ class VoiceNoteListController: UITableViewController {
             if let state = newVoice?.state {
                 if state == VoiceState.play {
                     startUpdateProgress()
-                    audioPlayer?.play()
+                    
+                    if let audioPlayer = audioPlayer {
+                        audioPlayer.play()
+                    } else {
+                        playVoice(voice: newVoice)
+                    }
                 } else {
                     stopUpdateProgress()
                     audioPlayer?.pause()
@@ -59,33 +93,7 @@ class VoiceNoteListController: UITableViewController {
         }
         
         oldVoice?.state = VoiceState.pause
-        
-        //点击不同Voice，先释放前一个AVAudioPlayer
-        audioPlayer?.delegate = nil
-        audioPlayer?.pause()
-        audioPlayer = nil
-        
-        //点击新的Voice
-        guard let newVoice = newVoice else {
-            return
-        }
-        
-        let path = newVoice.audioPath()
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            audioPlayer!.delegate = self
-            audioPlayer!.isMeteringEnabled = true
-            
-            audioPlayer!.prepareToPlay()
-            audioPlayer!.currentTime = TimeInterval(newVoice.progress) * audioPlayer!.duration
-            audioPlayer!.play()
-            
-            newVoice.state = VoiceState.play
-            startUpdateProgress()
-        } catch let error as NSError {
-            debugPrint("\(error.localizedDescription)")
-            return
-        }
+        playVoice(voice: newVoice)
     }
     
     //MARK: Update Progress
