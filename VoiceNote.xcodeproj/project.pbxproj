@@ -7,27 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633FF57C1DE1ED9D0020B1A2 /* AddVoiceNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FF5781DE1ED9D0020B1A2 /* AddVoiceNoteController.swift */; };
+		633FF57D1DE1ED9D0020B1A2 /* VoiceNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FF57A1DE1ED9D0020B1A2 /* VoiceNoteCell.swift */; };
+		633FF57E1DE1ED9D0020B1A2 /* VoiceNoteListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FF57B1DE1ED9D0020B1A2 /* VoiceNoteListController.swift */; };
+		633FF5801DE1EDA80020B1A2 /* VoiceWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633FF57F1DE1EDA80020B1A2 /* VoiceWaveView.swift */; };
 		635676F81DE0D0FF00CD8CC9 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635723CF1DE0C0C70008D813 /* ReactiveCocoa.framework */; };
 		635676F91DE0D0FF00CD8CC9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635723D01DE0C0C70008D813 /* Result.framework */; };
 		635676FB1DE0D0FF00CD8CC9 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635676FA1DE0D0FF00CD8CC9 /* ReactiveSwift.framework */; };
 		63A629FA1DDEA82E00C81397 /* DYDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A629F91DDEA82E00C81397 /* DYDataCenter.swift */; };
 		63A629FD1DDEA9F700C81397 /* VoiceNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */; };
-		63A62A021DDEB01800C81397 /* VoiceNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */; };
-		63A62A071DDEBA5500C81397 /* VoiceWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */; };
 		63A62A6D1DE0817100C81397 /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */; };
 		63A62A721DE0A87D00C81397 /* VoiceProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */; };
 		63A62A751DE0AAA200C81397 /* VoiceNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A731DE0AAA200C81397 /* VoiceNote.xcdatamodeld */; };
 		63A62A781DE0B40200C81397 /* VoiceNoteCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A771DE0B40200C81397 /* VoiceNoteCellVM.swift */; };
 		63A62A7A1DE0B46F00C81397 /* DYViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A62A791DE0B46F00C81397 /* DYViewModel.swift */; };
 		63B003371DDE917C00F22F0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B003361DDE917C00F22F0B /* AppDelegate.swift */; };
-		63B003391DDE917C00F22F0B /* AddVoiceNoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */; };
 		63B0033C1DDE917C00F22F0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B0033A1DDE917C00F22F0B /* Main.storyboard */; };
 		63B003411DDE917C00F22F0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B003401DDE917C00F22F0B /* Assets.xcassets */; };
 		63B003441DDE917C00F22F0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B003421DDE917C00F22F0B /* LaunchScreen.storyboard */; };
-		63B0034C1DDE976A00F22F0B /* VoiceNoteListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0034B1DDE976A00F22F0B /* VoiceNoteListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		633FF5781DE1ED9D0020B1A2 /* AddVoiceNoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVoiceNoteController.swift; sourceTree = "<group>"; };
+		633FF57A1DE1ED9D0020B1A2 /* VoiceNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteCell.swift; sourceTree = "<group>"; };
+		633FF57B1DE1ED9D0020B1A2 /* VoiceNoteListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteListController.swift; sourceTree = "<group>"; };
+		633FF57F1DE1EDA80020B1A2 /* VoiceWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceWaveView.swift; sourceTree = "<group>"; };
 		635676FA1DE0D0FF00CD8CC9 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = VoiceNote/Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		635723CF1DE0C0C70008D813 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = VoiceNote/Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		635723D01DE0C0C70008D813 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = VoiceNote/Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -35,20 +39,16 @@
 		63A629F91DDEA82E00C81397 /* DYDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYDataCenter.swift; sourceTree = "<group>"; };
 		63A629FB1DDEA9F700C81397 /* VoiceNoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteData.swift; sourceTree = "<group>"; };
 		63A629FF1DDEAB4200C81397 /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = VoiceNote/Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
-		63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteCell.swift; sourceTree = "<group>"; };
-		63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceWaveView.swift; sourceTree = "<group>"; };
 		63A62A711DE0A87D00C81397 /* VoiceProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceProgressView.swift; sourceTree = "<group>"; };
 		63A62A741DE0AAA200C81397 /* VoiceNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceNote.xcdatamodel; sourceTree = "<group>"; };
 		63A62A771DE0B40200C81397 /* VoiceNoteCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteCellVM.swift; sourceTree = "<group>"; };
 		63A62A791DE0B46F00C81397 /* DYViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYViewModel.swift; sourceTree = "<group>"; };
 		63B003331DDE917C00F22F0B /* VoiceNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B003361DDE917C00F22F0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoiceNoteController.swift; sourceTree = "<group>"; };
 		63B0033B1DDE917C00F22F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63B003401DDE917C00F22F0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B003431DDE917C00F22F0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63B003451DDE917C00F22F0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63B0034B1DDE976A00F22F0B /* VoiceNoteListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceNoteListController.swift; sourceTree = "<group>"; };
 		63BF55F01DDEA46C0078D233 /* VoiceNoteBridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceNoteBridging.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +67,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		633FF5771DE1ED9D0020B1A2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				633FF5781DE1ED9D0020B1A2 /* AddVoiceNoteController.swift */,
+				633FF5791DE1ED9D0020B1A2 /* VoiceNoteCell */,
+				633FF57B1DE1ED9D0020B1A2 /* VoiceNoteListController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		633FF5791DE1ED9D0020B1A2 /* VoiceNoteCell */ = {
+			isa = PBXGroup;
+			children = (
+				633FF57A1DE1ED9D0020B1A2 /* VoiceNoteCell.swift */,
+			);
+			path = VoiceNoteCell;
+			sourceTree = "<group>";
+		};
 		63A629F41DDEA76000C81397 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +112,6 @@
 			children = (
 				63A62A701DE0A86F00C81397 /* VoiceProgressView */,
 				63A62A041DDEBA4600C81397 /* VoiceWaveView */,
-				63A62A061DDEBA5500C81397 /* VoiceWaveView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,15 +119,9 @@
 		63A62A041DDEBA4600C81397 /* VoiceWaveView */ = {
 			isa = PBXGroup;
 			children = (
+				633FF57F1DE1EDA80020B1A2 /* VoiceWaveView.swift */,
 			);
 			path = VoiceWaveView;
-			sourceTree = "<group>";
-		};
-		63A62A051DDEBA4600C81397 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		63A62A701DE0A86F00C81397 /* VoiceProgressView */ = {
@@ -150,15 +161,12 @@
 		63B003351DDE917C00F22F0B /* VoiceNote */ = {
 			isa = PBXGroup;
 			children = (
+				633FF5771DE1ED9D0020B1A2 /* ViewController */,
 				63A629F81DDEA82E00C81397 /* Model */,
 				63A62A031DDEBA4600C81397 /* View */,
-				63A62A051DDEBA4600C81397 /* ViewController */,
 				63A62A761DE0B3C100C81397 /* ViewModel */,
 				63BF55F01DDEA46C0078D233 /* VoiceNoteBridging.h */,
 				63B003361DDE917C00F22F0B /* AppDelegate.swift */,
-				63B003381DDE917C00F22F0B /* AddVoiceNoteController.swift */,
-				63B0034B1DDE976A00F22F0B /* VoiceNoteListController.swift */,
-				63A62A011DDEB01800C81397 /* VoiceNoteCell.swift */,
 				63B0033A1DDE917C00F22F0B /* Main.storyboard */,
 				63B003401DDE917C00F22F0B /* Assets.xcassets */,
 				63B003421DDE917C00F22F0B /* LaunchScreen.storyboard */,
@@ -261,17 +269,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63B0034C1DDE976A00F22F0B /* VoiceNoteListController.swift in Sources */,
 				63A629FA1DDEA82E00C81397 /* DYDataCenter.swift in Sources */,
 				63A62A7A1DE0B46F00C81397 /* DYViewModel.swift in Sources */,
-				63A62A071DDEBA5500C81397 /* VoiceWaveView.swift in Sources */,
 				63A62A721DE0A87D00C81397 /* VoiceProgressView.swift in Sources */,
-				63A62A021DDEB01800C81397 /* VoiceNoteCell.swift in Sources */,
-				63B003391DDE917C00F22F0B /* AddVoiceNoteController.swift in Sources */,
 				63B003371DDE917C00F22F0B /* AppDelegate.swift in Sources */,
 				63A62A781DE0B40200C81397 /* VoiceNoteCellVM.swift in Sources */,
+				633FF5801DE1EDA80020B1A2 /* VoiceWaveView.swift in Sources */,
 				63A629FD1DDEA9F700C81397 /* VoiceNoteData.swift in Sources */,
 				63A62A751DE0AAA200C81397 /* VoiceNote.xcdatamodeld in Sources */,
+				633FF57D1DE1ED9D0020B1A2 /* VoiceNoteCell.swift in Sources */,
+				633FF57E1DE1ED9D0020B1A2 /* VoiceNoteListController.swift in Sources */,
+				633FF57C1DE1ED9D0020B1A2 /* AddVoiceNoteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
