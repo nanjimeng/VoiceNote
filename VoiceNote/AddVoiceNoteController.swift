@@ -286,12 +286,12 @@ class AddVoiceNoteController: UIViewController {
         var level: Float = 0
         if audioRecorder != nil && audioRecorder!.isRecording{
             audioRecorder!.updateMeters()
-            level = pow(10, audioRecorder!.averagePower(forChannel: 0) * 0.05)
+            level = pow(10, audioRecorder!.averagePower(forChannel: 0) * 0.025)
             debugPrint("level \(level)")
             waveColor = UIColor.blue
         } else if audioPlayer != nil && audioPlayer!.isPlaying {
             audioPlayer!.updateMeters()
-            level = pow(10, audioPlayer!.averagePower(forChannel: 0) * 0.05)
+            level = pow(10, audioPlayer!.averagePower(forChannel: 0) * 0.025)
             waveColor = UIColor.blue
         }
         waveView.waveColor = waveColor

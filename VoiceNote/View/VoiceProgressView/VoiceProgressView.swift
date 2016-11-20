@@ -76,7 +76,7 @@ public class VoiceProgressView: UIView {
                 path.close()
                 return path.cgPath
             case .Pause:
-                var rect = CGRect(origin: CGPoint(x: layerBounds.width * 0.1, y: 0), size: CGSize(width: layerBounds.width * 0.2, height: layerBounds.height))
+                var rect = CGRect(origin: CGPoint(x: layerBounds.width * 0.2, y: 0), size: CGSize(width: layerBounds.width * 0.2, height: layerBounds.height))
                 let path = UIBezierPath(rect: rect)
                 rect = rect.offsetBy(dx: layerBounds.width * 0.4, dy: 0)
                 path.append(UIBezierPath(rect: rect))
