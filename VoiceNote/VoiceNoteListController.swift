@@ -55,7 +55,8 @@ extension VoiceNoteListController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.Identifier.VoiceNote) as! VoiceNoteCell
         
         let voice = self.fetchedResultsController.object(at: indexPath)
-        cell.applyData(voice: voice)
+        let voiceVM = VoiceNoteCellVM(data: voice)
+        cell.viewModel = voiceVM
         return cell
     }
 }
@@ -80,7 +81,8 @@ extension VoiceNoteListController: NSFetchedResultsControllerDelegate {
         case .update:
             let cell = tableView.cellForRow(at: indexPath!) as! VoiceNoteCell
             let voice = fetchedResultsController.object(at: indexPath!)
-            cell.applyData(voice: voice)
+            let voiceVM = VoiceNoteCellVM(data: voice)
+            cell.viewModel = voiceVM
         case .move:
             tableView.deleteRows(at: [indexPath! as IndexPath], with: .automatic)
             tableView.insertRows(at: [newIndexPath! as IndexPath], with: .automatic)

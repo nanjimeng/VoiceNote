@@ -1,1 +1,2 @@
 github "MagicalPanda/MagicalRecord"
+github "ReactiveCocoa/ReactiveCocoa" "5.0.0-alpha.3"

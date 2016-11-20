@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
 
 class VoiceNoteCell: UITableViewCell {
     
@@ -14,9 +16,12 @@ class VoiceNoteCell: UITableViewCell {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var playProgressView: VoiceProgressView!
 
+    dynamic var viewModel : VoiceNoteCellVM?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupReactive()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,15 +30,9 @@ class VoiceNoteCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func applyData(voice: VoiceNoteData) {
-        titleLabel.text = voice.name
+    func setupReactive() {
+        DynamicProperty<String>(object: self.titleLabel, keyPath: #keyPath(text)) <~ DynamicProperty<String>(object: self, keyPath: #keyPath(viewModel.title)).signal
         
-        var duration = Int32(voice.duration * 1000)
-        let milli = duration % 1000
-        duration = duration / 1000
-        let minutes = duration / 60
-        let seconds = duration % 60
-        durationLabel.text = String(format: "%02d:%02d %03d", minutes, seconds, milli)
+        DynamicProperty<String>(object: self.durationLabel, keyPath: #keyPath(text)) <~ DynamicProperty<String>(object: self, keyPath: #keyPath(viewModel.duration)).signal
     }
-
 }
