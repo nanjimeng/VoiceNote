@@ -23,6 +23,11 @@ class VoiceNoteCell: UITableViewCell {
         
         setupReactive()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.viewModel = nil
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

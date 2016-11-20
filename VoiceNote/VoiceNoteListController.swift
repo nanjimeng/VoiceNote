@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import MagicalRecord
 
 class VoiceNoteListController: UITableViewController {
@@ -19,55 +20,92 @@ class VoiceNoteListController: UITableViewController {
     
     //MARK: Property
     var fetchedResultsController : NSFetchedResultsController<VoiceNoteData>!
+    var voiceCellVMs : [VoiceNoteCellVM] =  [VoiceNoteCellVM]()
     var selectedVoiceCellVM : VoiceNoteCellVM? {
         didSet {
-            oldValue
+            oldValue?.state = VoiceState.pause
+            changePlayState(newVoice: selectedVoiceCellVM, oldVoice: oldValue)
         }
     }
+    var audioPlayer : AVAudioPlayer?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 90
+        tableView.rowHeight = 80
         
         fetchedResultsController = VoiceNoteData.mr_fetchAllSorted(by: "date", ascending: false, with: nil, groupBy: nil, delegate: self, in:NSManagedObjectContext.mr_default()) as! NSFetchedResultsController<VoiceNoteData>
+        let voices = fetchedResultsController.fetchedObjects ?? [VoiceNoteData]()
+        for voice in voices {
+            voiceCellVMs.append(VoiceNoteCellVM(data: voice))
+        }
     }
     
+    func changePlayState(newVoice: VoiceNoteCellVM?, oldVoice: VoiceNoteCellVM?) {
+        //点击同一个Voice
+        if  newVoice == oldVoice {
+            newVoice?.changeState()
+            return
+        }
+        
+        //点击不同Voice，先释放前一个AVAudioPlayer
+        audioPlayer?.delegate = nil
+        audioPlayer?.pause()
+        audioPlayer = nil
+        
+        //点击新的Voice
+        guard let newVoice = newVoice else {
+            return
+        }
+        
+        let path = newVoice.audioPath()
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer?.delegate = self
+            audioPlayer?.isMeteringEnabled = true
+            
+            newVoice.state = VoiceState.play
+        } catch let error as NSError {
+            debugPrint("\(error.localizedDescription)")
+            return
+        }
+        
+        audioPlayer?.prepareToPlay()
+        audioPlayer?.play()
+    }
 }
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
 extension VoiceNoteListController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if tableView == self.tableView {
-            let ss = fetchedResultsController.sections!.count
-            return ss
-        } else {
-            return 0
-        }
+        return voiceCellVMs.count > 0 ? 1 : 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.tableView {
-            let sectionInfo = fetchedResultsController.sections![section]
-            return sectionInfo.numberOfObjects
-        } else {
-            return 0
-        }
+        return voiceCellVMs.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.Identifier.VoiceNote) as! VoiceNoteCell
-        
-        let voice = self.fetchedResultsController.object(at: indexPath)
-        let voiceVM = VoiceNoteCellVM(data: voice)
-        cell.viewModel = voiceVM
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let voiceVM = voiceCellVMs[indexPath.row]
         
+        if let cell = cell as? VoiceNoteCell {
+            cell.viewModel = voiceVM
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! VoiceNoteCell
+        self.selectedVoiceCellVM = cell.viewModel
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -85,17 +123,25 @@ extension VoiceNoteListController: NSFetchedResultsControllerDelegate {
                     newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            tableView.insertRows(at: [newIndexPath! as IndexPath], with: .automatic)
+            let voice = self.fetchedResultsController.object(at: newIndexPath!)
+            voiceCellVMs.insert(VoiceNoteCellVM(data: voice), at: newIndexPath!.row)
+            tableView.insertRows(at: [newIndexPath!], with: .automatic)
         case .delete:
-            tableView.deleteRows(at: [indexPath! as IndexPath], with: .automatic)
+            voiceCellVMs.remove(at: indexPath!.row)
+            tableView.deleteRows(at: [indexPath!], with: .automatic)
         case .update:
-            let cell = tableView.cellForRow(at: indexPath!) as! VoiceNoteCell
-            let voice = fetchedResultsController.object(at: indexPath!)
-            let voiceVM = VoiceNoteCellVM(data: voice)
-            cell.viewModel = voiceVM
+            break
+//            let cell = tableView.cellForRow(at: indexPath!) as! VoiceNoteCell
+//            let voice = fetchedResultsController.object(at: indexPath!)
+//            let voiceVM = VoiceNoteCellVM(data: voice)
+//            cell.viewModel = voiceVM
         case .move:
-            tableView.deleteRows(at: [indexPath! as IndexPath], with: .automatic)
-            tableView.insertRows(at: [newIndexPath! as IndexPath], with: .automatic)
+            voiceCellVMs.remove(at: indexPath!.row)
+            tableView.deleteRows(at: [indexPath!], with: .automatic)
+            
+            let voice = self.fetchedResultsController.object(at: newIndexPath!)
+            voiceCellVMs.insert(VoiceNoteCellVM(data: voice), at: newIndexPath!.row)
+            tableView.insertRows(at: [newIndexPath!], with: .automatic)
         }
         
     }
@@ -103,6 +149,18 @@ extension VoiceNoteListController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
+}
+
+extension VoiceNoteListController : AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            selectedVoiceCellVM?.state = VoiceState.pause
+            selectedVoiceCellVM?.progress = 0
+        }
+    }
     
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
+        debugPrint(error?.localizedDescription ?? "")
+    }
 }
 

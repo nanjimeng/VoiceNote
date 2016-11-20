@@ -38,8 +38,24 @@ class VoiceNoteCellVM: DYViewModel {
         }
     }
     
-    override func setupViewModel() {
+    func changeState() {
+        if state == VoiceState.pause {
+            state = VoiceState.play
+        } else {
+            state = VoiceState.pause
+        }
+    }
+    
+    func audioPath() -> String {
         guard let voice = self.data as? VoiceNoteData else {
+            return ""
+        }
+        
+        return voice.fileStorePath()
+    }
+    
+    override func setupViewModel() {
+        guard let _ = self.data as? VoiceNoteData else {
             return
         }
         
