@@ -117,11 +117,12 @@ class VoiceNoteListController: UITableViewController {
 extension VoiceNoteListController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return voiceCellVMs.count > 0 ? 1 : 0
+        return fetchedResultsController.sections!.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return voiceCellVMs.count
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
