@@ -73,11 +73,12 @@ class VoiceNoteListController: UITableViewController {
         let path = newVoice.audioPath()
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            audioPlayer?.delegate = self
-            audioPlayer?.isMeteringEnabled = true
+            audioPlayer!.delegate = self
+            audioPlayer!.isMeteringEnabled = true
             
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.play()
+            audioPlayer!.prepareToPlay()
+            audioPlayer!.currentTime = TimeInterval(newVoice.progress) * audioPlayer!.duration
+            audioPlayer!.play()
             
             newVoice.state = VoiceState.play
             startUpdateProgress()
@@ -194,12 +195,11 @@ extension VoiceNoteListController : AVAudioPlayerDelegate {
             audioPlayer?.stop()
             audioPlayer = nil
             
-            let voiceCellVM = selectedVoiceCellVM
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
-                voiceCellVM?.state = VoiceState.pause
-                voiceCellVM?.progress = 0
-                self.stopUpdateProgress()
-            }
+            stopUpdateProgress()
+            
+            selectedVoiceCellVM?.state = VoiceState.pause
+            selectedVoiceCellVM?.progress = 0
+            
         }
     }
     
